@@ -1,8 +1,11 @@
 import express, { Express } from "express";
 import "./core/env.config";
+import { createConfig } from "./config/config_mock";
+// import { connectToMongodb } from "./core/db_connection";
 
 const app: Express = express();
 const port = process.env.PORT || 4231;
+createConfig().then(console.log);
 
 app.use(express.json());
 

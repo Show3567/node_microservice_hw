@@ -1,18 +1,10 @@
 import express, { Express } from "express";
 import "./core/env.config";
-import { getConfig } from "./core/config_mock";
-import { connectionDB } from "./core/db_connection";
 
 const app: Express = express();
 const port = process.env.PORT || 4231;
 
 app.use(express.json());
-
-getConfig().then((config) => {
-	connectionDB(config).then((data) => {
-		console.log(data);
-	});
-});
 
 app.get("/", (req, res) => {
 	res.status(200).json({

@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
+import { getConfigData } from "../config/config_mock";
 
-const connectToMongodb = () => {
-	const db: string = process.env.DB || "";
+export const connectToMongodb = () => {
+	const db = getConfigData().db;
+	console.log(db);
 	mongoose
 		.connect(db)
 		.then((_) => {

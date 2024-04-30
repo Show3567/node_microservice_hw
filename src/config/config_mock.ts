@@ -30,12 +30,3 @@ export const createConfig = () => {
 		return data;
 	});
 };
-
-export const getConfig = () => {
-	try {
-		const data = getConfigData();
-		return data;
-	} catch (error) {
-		return createConfig();
-	}
-};

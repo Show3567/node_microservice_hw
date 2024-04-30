@@ -47,31 +47,25 @@ app.listen(port, () => {
 
   & send http request to other server;
   $ npm install axios
-
   & add passport;
   $ npm install passport passport-jwt jsonwebtoken
   $ npm install @types/passport @types/passport-jwt @types/jsonwebtoken --save-dev
-
   & add class-validator;
   $ npm install class-validator class-transformer reflect-metadata
 
   & add express-session;
   $ npm install express-session
   $ npm install @types/express-session @types/express --save-dev
-
   & add mongodb session, cz the typeorm store query builder not supported by MongoDB;
   $ npm install connect-mongodb-session express-session
-
   & add jsonwebtoken;
   $ npm i jsonwebtoken
   $ npm i @types/jsonwebtoken --save-dev
 
   & handle cros issue;
   $ npm install cors @types/cors
-
   & set env;
   $ npm install --save-dev cross-env
-
   & logger;
   $ npm install winston
   $ npm install @types/winston --save-dev
@@ -79,7 +73,6 @@ app.listen(port, () => {
   & create docker file Dockerfile: my image name is movie-backend;
   $ docker build -t <your-image-name> .
   $ docker run -p 8800:3344 -d <your-image-name>
-
   & stop the docker service in local;
   $ docker ps
   $ docker stop <container-id-or-name>

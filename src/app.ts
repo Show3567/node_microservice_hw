@@ -2,12 +2,14 @@ import express, { Express } from "express";
 import "./core/env.config";
 import { createConfig } from "./config/config_mock";
 import { connectToMongodb } from "./core/db_connection";
+import compression from "compression";
 
 const app: Express = express();
 const port = process.env.PORT || 4231;
 createConfig().then(console.log);
 connectToMongodb();
 
+app.use(compression());
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -78,4 +80,9 @@ app.listen(port, () => {
   $ docker stop <container-id-or-name>
   $ docker rm <container-id-or-name> // optional, this will remove the image;
   $ docker run -p 8800:3344 -d <your-image-name> // recreate the image;
+
+  & install gzip;
+  $ npm install compression
+  $ npm i --save-dev @types/compression
+
 */
